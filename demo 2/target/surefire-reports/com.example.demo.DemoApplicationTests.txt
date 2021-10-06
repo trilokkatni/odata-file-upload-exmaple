@@ -1,0 +1,10 @@
+-------------------------------------------------------------------------------
+Test set: com.example.demo.DemoApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.687 s <<< FAILURE! - in com.example.demo.DemoApplicationTests
+contextLoads  Time elapsed: 0.002 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dispatcherServlet' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/DispatcherServletAutoConfiguration$DispatcherServletConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.web.servlet.DispatcherServlet]: Factory method 'dispatcherServlet' threw exception; nested exception is java.lang.NoSuchMethodError: org.springframework.web.servlet.DispatcherServlet.setEnableLoggingRequestDetails(Z)V
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.web.servlet.DispatcherServlet]: Factory method 'dispatcherServlet' threw exception; nested exception is java.lang.NoSuchMethodError: org.springframework.web.servlet.DispatcherServlet.setEnableLoggingRequestDetails(Z)V
+Caused by: java.lang.NoSuchMethodError: org.springframework.web.servlet.DispatcherServlet.setEnableLoggingRequestDetails(Z)V
+
