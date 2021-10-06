@@ -29,7 +29,7 @@ public class UploadClient {
 
 		RestTemplate restTemplate = new RestTemplate();
 		List<ClientHttpRequestInterceptor> interceptors = new ArrayList<>();
-		interceptors.add(new BasicAuthenticationInterceptor("RFC_EPP", "welcome@123"));
+		interceptors.add(new BasicAuthenticationInterceptor("TEST", "******"));
 
 		interceptors.add(new CustomLoggingRequestInterceptor());
 		restTemplate.setInterceptors(interceptors);
@@ -41,7 +41,7 @@ public class UploadClient {
 
 		getHeaders.setAcceptCharset(Arrays.asList(StandardCharsets.UTF_8));
 		ResponseEntity<?> csrfTokenExchange = restTemplate.exchange(
-				"http://10.1.45.22:8000/sap/opu/odata/sap/ZIDP_UBS_SRV/", HttpMethod.GET, new HttpEntity<>(getHeaders),
+				"OST", HttpMethod.GET, new HttpEntity<>(getHeaders),
 				String.class);
 
 		System.out.println(csrfTokenExchange.getHeaders());
@@ -65,14 +65,13 @@ public class UploadClient {
 		headers.set("cookie", cookie);
 		
 	    headers.add("Accept", "application/json, application/*+json");
-		// headers.add("Authorization", "Basic UkZDX0VQUDp3ZWxjb21lQDEyMw==");
 
 		HttpEntity<Resource> requestEntity = new HttpEntity<>(bodyMap, headers);
 
 		RestTemplate restTemplate1 = new RestTemplate();
 		restTemplate1.setInterceptors(interceptors);
 		ResponseEntity<String> response = restTemplate1.exchange(
-				"http://10.1.45.22:8000/sap/opu/odata/sap/ZIDP_UBS_SRV/CreateVendorSet", HttpMethod.POST, requestEntity,
+				"SETt", HttpMethod.POST, requestEntity,
 				String.class);
 
 		System.out.println("response status: " + response.getStatusCode());
