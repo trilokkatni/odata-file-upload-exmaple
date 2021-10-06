@@ -7,9 +7,6 @@ import org.springframework.http.client.ClientHttpRequestInterceptor;
 import org.springframework.http.client.support.BasicAuthenticationInterceptor;
 import org.springframework.web.client.RestTemplate;
 
-import com.utcl.integration.odata.constants.UtclodataintegrationConstants;
-
-import de.hybris.platform.commercefacades.order.data.AbstractOrderData;
 
 import java.io.File;
 import java.io.IOException;
@@ -83,7 +80,7 @@ public class UploadClient {
 //        Path tempFile = Files.createTempFile("upload-test-file", ".txt");
 //        Files.write(tempFile, "some test content...\nline1\nline2".getBytes());
 //        System.out.println("uploading: " + tempFile);
-		File file = new File("/Users/i321750/Downloads/demo 2/Book1.xlsx");
+		File file = new File("Book1.xlsx");
 		// to upload in-memory bytes use ByteArrayResource instead
 		return new FileSystemResource(file);
 	}
